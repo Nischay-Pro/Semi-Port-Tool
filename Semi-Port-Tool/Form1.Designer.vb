@@ -26,6 +26,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -35,6 +36,7 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
@@ -74,6 +76,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button4)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 115)
         Me.GroupBox1.Name = "GroupBox1"
@@ -81,15 +84,26 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(509, 91)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(116, 23)
+        Me.Button4.TabIndex = 9
+        Me.Button4.Text = "Start Porting"
+        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.Visible = False
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(17, 28)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(47, 13)
+        Me.Label6.Size = New System.Drawing.Size(108, 13)
         Me.Label6.TabIndex = 2
-        Me.Label6.Text = "Status :"
+        Me.Label6.Text = "Status : Loading UI"
         '
         'Label3
         '
@@ -144,6 +158,7 @@ Partial Class Form1
         '
         'Button2
         '
+        Me.Button2.Enabled = False
         Me.Button2.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(17, 31)
         Me.Button2.Name = "Button2"
@@ -154,6 +169,7 @@ Partial Class Form1
         '
         'Button1
         '
+        Me.Button1.Enabled = False
         Me.Button1.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(332, 31)
         Me.Button1.Name = "Button1"
@@ -164,6 +180,7 @@ Partial Class Form1
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.CheckBox1)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.Button3)
         Me.GroupBox3.Location = New System.Drawing.Point(15, 361)
@@ -172,6 +189,17 @@ Partial Class Form1
         Me.GroupBox3.TabIndex = 9
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Advanced Configuration"
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Enabled = False
+        Me.CheckBox1.Location = New System.Drawing.Point(17, 60)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(176, 17)
+        Me.CheckBox1.TabIndex = 7
+        Me.CheckBox1.Text = "Enable Advanced Configuration"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -185,8 +213,9 @@ Partial Class Form1
         '
         'Button3
         '
+        Me.Button3.Enabled = False
         Me.Button3.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(17, 56)
+        Me.Button3.Location = New System.Drawing.Point(332, 57)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(290, 23)
         Me.Button3.TabIndex = 6
@@ -235,4 +264,6 @@ Partial Class Form1
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

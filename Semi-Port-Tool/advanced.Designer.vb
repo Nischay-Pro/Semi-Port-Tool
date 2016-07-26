@@ -23,15 +23,16 @@ Partial Class advanced
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -44,6 +45,16 @@ Partial Class advanced
         Me.Panel1.Size = New System.Drawing.Size(438, 83)
         Me.Panel1.TabIndex = 2
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Droid", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(22, 23)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(406, 38)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Advanced Configuration"
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -55,18 +66,9 @@ Partial Class advanced
         Me.Label2.Text = "Here you can apply certain fixes or you can select unique copying modes. This" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de" &
     "pends on the support of your device."
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Droid", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(22, 23)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(406, 38)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Advanced Configuration"
-        '
         'ComboBox1
         '
+        Me.ComboBox1.Enabled = False
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(130, 174)
         Me.ComboBox1.Name = "ComboBox1"
@@ -85,25 +87,36 @@ Partial Class advanced
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 201)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(438, 140)
+        Me.GroupBox1.Size = New System.Drawing.Size(438, 158)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         '
-        'Label4
+        'Label7
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(26, 25)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(45, 13)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Name :"
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(26, 133)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(90, 13)
+        Me.Label7.TabIndex = 9
+        Me.Label7.Text = "Copying Mode :"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(26, 111)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(41, 13)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "Type :"
         '
         'Label5
         '
@@ -115,31 +128,31 @@ Partial Class advanced
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Description :"
         '
-        'Label6
+        'Label4
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(26, 91)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(41, 13)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "Type :"
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(26, 25)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(45, 13)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Name :"
         '
-        'Label7
+        'Label8
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(26, 113)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(90, 13)
-        Me.Label7.TabIndex = 9
-        Me.Label7.Text = "Copying Mode :"
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(26, 89)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(68, 13)
+        Me.Label8.TabIndex = 10
+        Me.Label8.Text = "Developer :"
         '
         'advanced
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(462, 350)
+        Me.ClientSize = New System.Drawing.Size(462, 371)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.ComboBox1)
@@ -168,4 +181,5 @@ Partial Class advanced
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents Label8 As Label
 End Class
