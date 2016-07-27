@@ -246,6 +246,10 @@ nextend:
     Public DiffTool As Boolean = True
     Public IgnoreFileFolder As Boolean = True
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        tools.Show()
+    End Sub
+
 
 #End Region
 
