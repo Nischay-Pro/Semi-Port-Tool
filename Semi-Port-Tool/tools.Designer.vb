@@ -92,10 +92,10 @@ Partial Class tools
         Me.Label2.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(18, 25)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(407, 26)
+        Me.Label2.Size = New System.Drawing.Size(398, 26)
         Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Allows you to quickly generate a patch files by automatically differentiating" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "fr" &
-    "om a older build and a newer build."
+        Me.Label2.Text = "Allows you to quickly generate patch files by automatically differentiating" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "file" &
+    "s from a older build and a newer build."
         '
         'Label3
         '

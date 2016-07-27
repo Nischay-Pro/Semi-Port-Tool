@@ -124,7 +124,7 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(470, 473)
+        Me.Label4.Location = New System.Drawing.Point(448, 472)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(132, 13)
         Me.Label4.TabIndex = 3
