@@ -246,6 +246,7 @@ nextend:
     Public DiffTool As Boolean = True
     Public IgnoreFileFolder As Boolean = True
 
+
 #End Region
 
     Private Sub RunDiff()

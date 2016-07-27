@@ -34,29 +34,32 @@ Partial Class configurebuild
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(12, 12)
+        Me.Panel1.Location = New System.Drawing.Point(-1, -2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(474, 83)
+        Me.Panel1.Size = New System.Drawing.Size(505, 97)
         Me.Panel1.TabIndex = 3
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Droid", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(22, 23)
+        Me.Label1.Font = New System.Drawing.Font("Droid", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(112, 32)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(443, 38)
+        Me.Label1.Size = New System.Drawing.Size(334, 28)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Configure Build Paramters" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -165,6 +168,16 @@ Partial Class configurebuild
         Me.Label3.Text = "By default the program ignores missing Files / Folders when porting." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Enable this" &
     " only when the developer has explicity said to enable."
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Semi_Port_Tool.My.Resources.Resources.browser_2_
+        Me.PictureBox1.Location = New System.Drawing.Point(17, 14)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
+        '
         'configurebuild
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -186,6 +199,7 @@ Partial Class configurebuild
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -202,4 +216,5 @@ Partial Class configurebuild
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

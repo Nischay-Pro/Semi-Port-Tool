@@ -28,11 +28,11 @@ Partial Class advanced
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -98,6 +98,16 @@ Partial Class advanced
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(26, 89)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(68, 13)
+        Me.Label8.TabIndex = 10
+        Me.Label8.Text = "Developer :"
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -137,16 +147,6 @@ Partial Class advanced
         Me.Label4.Size = New System.Drawing.Size(45, 13)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Name :"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(26, 89)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(68, 13)
-        Me.Label8.TabIndex = 10
-        Me.Label8.Text = "Developer :"
         '
         'advanced
         '

@@ -36,14 +36,18 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -192,6 +196,17 @@ Partial Class Form1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Advanced Configuration"
         '
+        'Button5
+        '
+        Me.Button5.Enabled = False
+        Me.Button5.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(410, 28)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(212, 23)
+        Me.Button5.TabIndex = 8
+        Me.Button5.Text = "Configure Build Parameters"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
@@ -224,23 +239,34 @@ Partial Class Form1
         Me.Button3.Text = "Select Advanced Configuration"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'Button5
+        'PictureBox1
         '
-        Me.Button5.Enabled = False
-        Me.Button5.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(410, 28)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(212, 23)
-        Me.Button5.TabIndex = 8
-        Me.Button5.Text = "Configure Build Parameters"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.PictureBox1.Image = Global.Semi_Port_Tool.My.Resources.Resources.settings_1_
+        Me.PictureBox1.Location = New System.Drawing.Point(581, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Semi_Port_Tool.My.Resources.Resources.employee
+        Me.PictureBox2.Location = New System.Drawing.Point(619, 12)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox2.TabIndex = 10
+        Me.PictureBox2.TabStop = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(663, 495)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -257,6 +283,8 @@ Partial Class Form1
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -280,4 +308,6 @@ Partial Class Form1
     Friend WithEvents Button4 As Button
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Button5 As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
