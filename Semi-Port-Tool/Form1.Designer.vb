@@ -39,6 +39,7 @@ Partial Class Form1
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -180,6 +181,7 @@ Partial Class Form1
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Button5)
         Me.GroupBox3.Controls.Add(Me.CheckBox1)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.Button3)
@@ -215,12 +217,23 @@ Partial Class Form1
         '
         Me.Button3.Enabled = False
         Me.Button3.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(332, 57)
+        Me.Button3.Location = New System.Drawing.Point(410, 57)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(290, 23)
+        Me.Button3.Size = New System.Drawing.Size(212, 23)
         Me.Button3.TabIndex = 6
         Me.Button3.Text = "Select Advanced Configuration"
         Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Enabled = False
+        Me.Button5.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(410, 28)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(212, 23)
+        Me.Button5.TabIndex = 8
+        Me.Button5.Text = "Configure Build Parameters"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -266,4 +279,5 @@ Partial Class Form1
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Button5 As Button
 End Class

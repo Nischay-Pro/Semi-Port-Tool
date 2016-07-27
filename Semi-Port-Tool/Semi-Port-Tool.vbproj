@@ -87,6 +87,12 @@
     <Compile Include="baseport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="configurebuild.Designer.vb">
+      <DependentUpon>configurebuild.vb</DependentUpon>
+    </Compile>
+    <Compile Include="configurebuild.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="baseport.resx">
       <DependentUpon>baseport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="configurebuild.resx">
+      <DependentUpon>configurebuild.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
