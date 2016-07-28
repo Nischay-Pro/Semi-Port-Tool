@@ -1,4 +1,4 @@
 language: csharp
 solution: Semi-Port-Tool.sln
 mono:
-  - latest
+  - 4.4
