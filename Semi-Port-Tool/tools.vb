@@ -104,8 +104,15 @@ Public Class tools
         For Each itm In listmanfiles.Items
             If compmanfiles.Items.Contains(itm) Then compmanfiles.Items.Remove(itm)
         Next
-        Dim result As List(Of String) = tempa.Items.Cast(Of String).ToList
-        Dim killresult As List(Of String) = compmanfiles.Items.Cast(Of String).ToList
+        Dim result As New List(Of String)
+        Dim killresult As New List(Of String)
+        For Each Item As String In tempa.Items
+            result.Add(Item)
+        Next
+        For Each Item As String In compmanfiles.Items
+            killresult.Add(Item)
+        Next
+
         '
         '       Doesn't work on Mono :(
         '
