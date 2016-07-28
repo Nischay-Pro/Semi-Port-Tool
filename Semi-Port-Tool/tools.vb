@@ -130,7 +130,7 @@ Public Class tools
                 Dim detectedsystem As Boolean = False
                 For Each Item As String In split
                     inta += 1
-                    If inta = split.Count Then
+                    If inta = UBound(split) + 1 Then
                         detectedsystem = False
                         structured = ""
                         inta = 0
