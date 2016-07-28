@@ -97,8 +97,27 @@ Public Class tools
                 End If
             Next
         Loop
-        Dim result As List(Of String) = (From s1 As String In listman.Items Where Not compman.Items.Contains(s1) Select s1).ToList()
-        Dim killresult As List(Of String) = (From s1 As String In compmanfiles.Items Where Not listmanfiles.Items.Contains(s1) Select s1).ToList()
+        Dim tempa As ListBox = listman
+        For Each itm As String In compman.Items
+            If tempa.Items.Contains(itm) Then tempa.Items.Remove(itm)
+        Next
+        For Each itm As String In listmanfiles.Items
+            If compmanfiles.Items.Contains(itm) Then compmanfiles.Items.Remove(itm)
+        Next
+        Dim result As New List(Of String)
+        Dim killresult As New List(Of String)
+        For Each Item As String In tempa.Items
+            result.Add(Item)
+        Next
+        For Each Item As String In compmanfiles.Items
+            killresult.Add(Item)
+        Next
+
+        '
+        '       Doesn't work on Mono :(
+        '
+        'Dim result As List(Of String) = (From s1 As String In listman.Items Where Not compman.Items.Contains(s1) Select s1).ToList()
+        'Dim killresult As List(Of String) = (From s1 As String In compmanfiles.Items Where Not listmanfiles.Items.Contains(s1) Select s1).ToList()
         SetLabelText("Status : Found out " & result.Count & " unique modifications " & killresult.Count & " deletions", Label6)
         wait(1000)
         If result.Count <> 0 Then
@@ -111,7 +130,7 @@ Public Class tools
                 Dim detectedsystem As Boolean = False
                 For Each Item As String In split
                     inta += 1
-                    If inta = split.Count Then
+                    If inta = UBound(split) + 1 Then
                         detectedsystem = False
                         structured = ""
                         inta = 0
