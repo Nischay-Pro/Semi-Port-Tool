@@ -1,7 +1,6 @@
 ﻿Imports System.Threading
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
-Imports System.Linq
 
 Public Class tools
     Dim jsondata As String
