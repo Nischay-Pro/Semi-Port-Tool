@@ -1,4 +1,7 @@
-﻿Module methods
+﻿Imports System.IO
+Imports System.Security
+Imports System.Security.Cryptography
+Module methods
 
     Public Enum ExceptionType
         Warning
@@ -60,5 +63,57 @@
             End If
         End If
         Return "ERROR"
+    End Function
+    Public Function hash_generator(ByVal hash_type As String, ByVal file_name As String)
+
+        Dim hash
+        If hash_type.ToLower = "md5" Then
+            hash = MD5.Create
+        ElseIf hash_type.ToLower = "sha1" Then
+            hash = SHA1.Create()
+        ElseIf hash_type.ToLower = "sha256" Then
+            hash = SHA256.Create()
+        Else
+            MsgBox("Unknown type of hash : " & hash_type, MsgBoxStyle.Critical)
+            Return False
+        End If
+
+        Dim hashValue() As Byte
+
+        Dim fileStream As FileStream = File.OpenRead(file_name)
+        fileStream.Position = 0
+        hashValue = hash.ComputeHash(fileStream)
+        Dim hash_hex = PrintByteArray(hashValue)
+
+        fileStream.Close()
+
+        Return hash_hex
+
+    End Function
+
+    Public Function PrintByteArray(ByVal array() As Byte)
+
+        Dim hex_value As String = ""
+
+        Dim i As Integer
+        For i = 0 To array.Length - 1
+
+            hex_value += array(i).ToString("X2")
+
+        Next i
+        Return hex_value.ToLower
+
+    End Function
+
+    Public Function md5_hash(ByVal file_name As String)
+        Return hash_generator("md5", file_name)
+    End Function
+
+    Public Function sha_1(ByVal file_name As String)
+        Return hash_generator("sha1", file_name)
+    End Function
+
+    Public Function sha_256(ByVal file_name As String)
+        Return hash_generator("sha256", file_name)
     End Function
 End Module

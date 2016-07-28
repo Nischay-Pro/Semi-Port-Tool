@@ -1,9 +1,20 @@
 ﻿Imports Newtonsoft.Json
 Imports System.Threading
+Imports Newtonsoft.Json.Linq
+Imports System.IO
+
 Public Class Form1
+
+    Public Sub ReOpen()
+        toolsgui.Close()
+        wait(1000)
+        wait(1000)
+        toolsgui.Show()
+    End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label4.Text += My.Application.Info.Version.ToString
         Dim startup As New Thread(AddressOf StartupEngine)
+        startup.IsBackground = True
         startup.Start()
     End Sub
     Private Sub wait(ByVal interval As Integer)
@@ -36,7 +47,7 @@ Public Class Form1
                 ThrowException(ex, Nothing, ExceptionType.Warning)
                 Exit Sub
             End Try
-            SetLabelText("Status : Welcome. Please load PORT and BASE folders to begin working.", Label6)
+            SetLabelText("Status : Select your Phone Model to start working.", Label6)
         Next
     End Sub
 
@@ -116,6 +127,8 @@ Public Class Form1
         Button1.Enabled = True
         Button2.Enabled = True
         CheckBox1.Enabled = True
+        ToggleEnableButton(True, Button5)
+        SetLabelText("Status : Good now load PORT and BASE folders to begin working.", Label6)
     End Sub
 
     Private Sub VerifyPort()
@@ -167,6 +180,7 @@ Public Class Form1
         wait(2000)
         Label6.Text = "Status : Porting"
         Dim startport As New Thread(AddressOf PortStart)
+        startport.SetApartmentState(ApartmentState.STA)
         startport.Start()
     End Sub
     Private Sub ShowBaseStock()
@@ -174,6 +188,10 @@ Public Class Form1
 
         baseport.Show()
         baseport.Location = New Point(Me.Location.X + frm1Width, Me.Location.Y)
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        configurebuild.Show()
     End Sub
 
     Private Sub PortStart()
@@ -224,6 +242,49 @@ Public Class Form1
             End Try
 nextend:
         Next
+        If DiffTool = True Then
+            SetLabelText("Status : Starting Diff Tool", Label6)
+            RunDiff()
+        End If
         SetLabelText("Status : Porting Complete", Label6)
     End Sub
+
+#Region "ConfigurationBuild"
+
+    Public DiffTool As Boolean = True
+    Public IgnoreFileFolder As Boolean = True
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        'creatediff.Show()
+        'tools.Show()
+        toolsgui.Show()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        about.Show()
+    End Sub
+
+
+#End Region
+
+    Private Sub RunDiff()
+        SetLabelText("Status : Running Diff Tool", Label6)
+        Dim savefile As New SaveFileDialog
+        savefile.Title = "Select Directory to save file hashes"
+        savefile.Filter = "JSON Configuration File|*.json"
+        If savefile.ShowDialog = DialogResult.OK Then
+            Dim jsondata As New JArray
+
+            For Each Item As String In My.Computer.FileSystem.GetFiles(port, FileIO.SearchOption.SearchAllSubDirectories, "*.*")
+                Dim hash_md5 = md5_hash(Item)
+                Dim temp As String = Item
+                temp = temp.Replace(port & "\", "")
+                jsondata.Add(New JObject(
+                             New JProperty("filename", temp),
+                             New JProperty("md5", hash_md5)))
+            Next
+            File.WriteAllText(savefile.FileName, jsondata.ToString)
+        End If
+    End Sub
 End Class
+
