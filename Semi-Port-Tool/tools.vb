@@ -1,4 +1,7 @@
-﻿Imports System.IO
+﻿Imports System.ComponentModel
+Imports System.IO
+Imports System.Runtime.InteropServices
+Imports System.Threading
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 
@@ -21,6 +24,9 @@ Public Class tools
             End If
             portmain = openfolder.SelectedPath
             Button2.Enabled = False
+            If jsondata <> "" And portmain <> "" And destination <> "" Then
+                Button3.Enabled = True
+            End If
         End If
     End Sub
 
@@ -35,6 +41,9 @@ Public Class tools
             End If
             destination = openfolder.SelectedPath
             Button4.Enabled = False
+            If jsondata <> "" And portmain <> "" And destination <> "" Then
+                Button3.Enabled = True
+            End If
         End If
     End Sub
 
@@ -44,12 +53,19 @@ Public Class tools
         openme.Filter = "JSON Files|*.json"
         If openme.ShowDialog = DialogResult.OK Then
             jsondata = openme.FileName
+            Button1.Enabled = False
         End If
-        Button1.Enabled = False
+        If jsondata <> "" And portmain <> "" And destination <> "" Then
+            Button3.Enabled = True
+        End If
     End Sub
-
+    Dim activethreads As New ListBox
+    Dim threadman As Thread
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim threadman As New Threading.Thread(AddressOf RunDiff)
+        Dim cts As New CancellationTokenSource
+        threadman = New Threading.Thread(AddressOf RunDiff)
+        threadman.IsBackground = True
+        activethreads.Items.Add(threadman.ManagedThreadId)
         threadman.Start()
     End Sub
 
@@ -87,5 +103,65 @@ Public Class tools
         Dim result As List(Of String) = (From s1 As String In listman.Items Where Not compman.Items.Contains(s1) Select s1).ToList()
         Dim killresult As List(Of String) = (From s1 As String In compmanfiles.Items Where Not listmanfiles.Items.Contains(s1) Select s1).ToList()
         SetLabelText("Status : Found out " & result.Count & " unique modifications " & killresult.Count & " deletions", Label6)
+        wait(1000)
+        If result.Count <> 0 Then
+            SetLabelText("Status : Generating Folder Structure", Label6)
+            For Each File As String In result
+                Dim fullpath As String = portmain & "\" & File
+                Dim split As String() = fullpath.Split("\")
+                Dim inta As Integer = 0
+                Dim structured As String = ""
+                Dim detectedsystem As Boolean = False
+                For Each Item As String In split
+                    inta += 1
+                    If inta = split.Count Then
+                        detectedsystem = False
+                        structured = ""
+                        inta = 0
+                    Else
+                        If detectedsystem = True Then
+                            My.Computer.FileSystem.CreateDirectory(destination & "\" & structured & "\" & Item)
+                            structured += "\" & Item
+                        End If
+                        If Item = "system" And detectedsystem = False Then
+                            structured += "\system"
+                            detectedsystem = True
+                        End If
+                    End If
+                Next
+            Next
+            SetLabelText("Status : Folder Structure Generation Complete", Label6)
+            wait(1000)
+            SetLabelText("Status : Copying Modifications", Label6)
+            For Each File1 As String In result
+                Dim File As String() = File1.Split(":")
+                Dim fullpathsource As String = portmain & "\" & File(0)
+                Dim fullpathdestination As String = destination & "\system\" & File(0)
+                FileCopy(fullpathsource, fullpathdestination)
+            Next
+            SetLabelText("Status : Incremental Update Folder Generated", Label6)
+        Else
+            SetLabelText("Status : JSON Configuration File is in sync with PORT folder.", Label6)
+        End If
+        activethreads.Items.Remove(Thread.CurrentThread.ManagedThreadId)
+    End Sub
+
+    Private Sub wait(ByVal interval As Integer)
+        Dim sw As New Stopwatch
+        sw.Start()
+        Do While sw.ElapsedMilliseconds < interval
+            Application.DoEvents()
+        Loop
+        sw.Stop()
+    End Sub
+
+    Private Sub tools_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If activethreads.Items.Count <> 0 Then
+            If MessageBox.Show("An active process(es) is running. Do you wish to aggressively terminate the process?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                threadman.Abort()
+            Else
+                e.Cancel = True
+            End If
+        End If
     End Sub
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class tools
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,20 +20,20 @@ Partial Class tools
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -51,16 +51,6 @@ Partial Class tools
         Me.Panel1.Size = New System.Drawing.Size(449, 83)
         Me.Panel1.TabIndex = 2
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Droid", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(104, 19)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(329, 38)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Diif Tool Versioning"
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Semi_Port_Tool.My.Resources.Resources.robot
@@ -70,6 +60,16 @@ Partial Class tools
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Droid", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(104, 19)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(329, 38)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Diif Tool Versioning"
         '
         'GroupBox1
         '
@@ -86,35 +86,24 @@ Partial Class tools
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         '
-        'Label2
+        'Button4
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(18, 25)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(398, 26)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Allows you to quickly generate patch files by automatically differentiating" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "file" &
-    "s from a older build and a newer build."
+        Me.Button4.Location = New System.Drawing.Point(262, 114)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(163, 23)
+        Me.Button4.TabIndex = 14
+        Me.Button4.Text = "Select Destination"
+        Me.Button4.UseVisualStyleBackColor = True
         '
-        'Label3
+        'Label5
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(18, 62)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(185, 13)
-        Me.Label3.TabIndex = 9
-        Me.Label3.Text = "Load Primary JSON Configuration"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(262, 56)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(163, 23)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Load JSON"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(18, 120)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(169, 13)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "Select destination Patch folder"
         '
         'Button2
         '
@@ -135,33 +124,45 @@ Partial Class tools
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "Select newer PORT folder"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(262, 56)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(163, 23)
+        Me.Button1.TabIndex = 10
+        Me.Button1.Text = "Load JSON"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(18, 62)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(185, 13)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Load Primary JSON Configuration"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(18, 25)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(398, 26)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "Allows you to quickly generate patch files by automatically differentiating" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "file" &
+    "s from a older build and a newer build."
+        '
         'Button3
         '
+        Me.Button3.Enabled = False
         Me.Button3.Location = New System.Drawing.Point(350, 19)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(93, 23)
         Me.Button3.TabIndex = 13
         Me.Button3.Text = "Run"
         Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(262, 114)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(163, 23)
-        Me.Button4.TabIndex = 14
-        Me.Button4.Text = "Select Destination"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Droid Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(18, 120)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(169, 13)
-        Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Select destination Patch folder"
         '
         'GroupBox2
         '

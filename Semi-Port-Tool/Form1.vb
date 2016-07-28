@@ -7,6 +7,7 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label4.Text += My.Application.Info.Version.ToString
         Dim startup As New Thread(AddressOf StartupEngine)
+        startup.IsBackground = True
         startup.Start()
     End Sub
     Private Sub wait(ByVal interval As Integer)
@@ -247,6 +248,7 @@ nextend:
     Public IgnoreFileFolder As Boolean = True
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        creatediff.Show()
         tools.Show()
     End Sub
 
