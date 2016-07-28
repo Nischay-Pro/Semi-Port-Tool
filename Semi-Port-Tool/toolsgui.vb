@@ -46,11 +46,13 @@ Public Class toolsgui
             Label4.Text = "Status : Installed | Ready to launch"
             Label6.Text = "Version : " & My.Application.Info.Version.ToString
             Label5.Text = "Description : Allows you to create a JSON Configuration file containing the meta data of all your PORTed files. This allows you to be later reused when making the incremental patch."
+            PictureBox2.Image = My.Resources.robot
         ElseIf ComboBox1.SelectedItem.ToString = "Diff Tool Versioning" Then
             Label3.Text = "Author : Nischay Pro"
             Label4.Text = "Status : Installed | Ready to launch"
             Label6.Text = "Version : " & My.Application.Info.Version.ToString
             Label5.Text = "Description : Using the JSON Configuration File you created allows you to generate incremental patches."
+            PictureBox2.Image = My.Resources.robot
         Else
             Dim Data = JObject.Parse(jsondata)
             Dim i As Integer
@@ -65,6 +67,7 @@ Public Class toolsgui
                     If Data("tools")(i)("runas").ToString = "True" Then
                         runas = True
                     End If
+                    PictureBox2.Image = Image.FromFile(GetIconPath(Data("tools")(i)))
                     launchpath = GetLaunchPath(Data("tools")(i))
                     Label6.Text = "Version : " & Data("tools")(i)("version").ToString
                     Label5.Text = "Description : " & Data("tools")(i)("description").ToString
@@ -80,6 +83,17 @@ Public Class toolsgui
         Dim temp As String
         temp = My.Application.Info.DirectoryPath & "\tools\"
         temp += JOb("launch").ToString
+
+        If temp.Contains("%name%") Then
+            temp = temp.Replace("%name%", JOb("name").ToString)
+        End If
+        Return temp
+    End Function
+
+    Private Function GetIconPath(ByVal JOb As JObject)
+        Dim temp As String
+        temp = My.Application.Info.DirectoryPath & "\tools\"
+        temp += JOb("icon").ToString
 
         If temp.Contains("%name%") Then
             temp = temp.Replace("%name%", JOb("name").ToString)
@@ -132,6 +146,7 @@ Public Class toolsgui
             My.Computer.FileSystem.CopyDirectory(My.Application.Info.DirectoryPath & "\temp\", My.Application.Info.DirectoryPath & "\tools\" & obj("name").ToString)
             Kill(My.Application.Info.DirectoryPath & "\temp\install.json")
             My.Computer.FileSystem.DeleteDirectory(My.Application.Info.DirectoryPath & "\temp", FileIO.DeleteDirectoryOption.DeleteAllContents)
+            Kill(My.Application.Info.DirectoryPath & "\tools\" & obj("name").ToString & "\install.json")
             SetLabelText("Installed Package", Label8)
             updated = True
         End If
