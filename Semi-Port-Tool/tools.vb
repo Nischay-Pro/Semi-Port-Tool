@@ -98,10 +98,10 @@ Public Class tools
             Next
         Loop
         Dim tempa As ListBox = listman
-        For Each itm In compman.Items
+        For Each itm As String In compman.Items
             If tempa.Items.Contains(itm) Then tempa.Items.Remove(itm)
         Next
-        For Each itm In listmanfiles.Items
+        For Each itm As String In listmanfiles.Items
             If compmanfiles.Items.Contains(itm) Then compmanfiles.Items.Remove(itm)
         Next
         Dim result As New List(Of String)
