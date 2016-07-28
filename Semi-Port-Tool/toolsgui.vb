@@ -4,6 +4,7 @@ Imports Newtonsoft.Json.Linq
 Public Class toolsgui
     Dim jsondata As String
     Private Sub toolsgui_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ComboBox1.SelectedIndex = 0
         Me.AllowDrop = True
         jsondata = My.Computer.FileSystem.ReadAllText(My.Application.Info.DirectoryPath & "\tools\data.json")
         Dim Data = JObject.Parse(jsondata)
@@ -17,9 +18,24 @@ Public Class toolsgui
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If ComboBox1.SelectedItem.ToString = "Diff Tool Creator" Then
             creatediff.Show()
-        End If
-        If ComboBox1.SelectedItem.ToString = "Diff Tool Versioning" Then
+        ElseIf ComboBox1.SelectedItem.ToString = "Diff Tool Versioning" Then
             tools.Show()
+        Else
+            If launchpath <> "" And runas = False Then
+                Process.Start(launchpath)
+            Else
+                Dim procStartInfo As New ProcessStartInfo
+                Dim procExecuting As New Process
+
+                With procStartInfo
+                    .UseShellExecute = True
+                    .FileName = launchpath
+                    .WindowStyle = ProcessWindowStyle.Normal
+                    .Verb = "runas"
+                End With
+
+                procExecuting = Process.Start(procStartInfo)
+            End If
         End If
     End Sub
     Dim launchpath As String
