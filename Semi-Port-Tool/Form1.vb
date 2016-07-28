@@ -4,6 +4,13 @@ Imports Newtonsoft.Json.Linq
 Imports System.IO
 
 Public Class Form1
+
+    Public Sub ReOpen()
+        toolsgui.Close()
+        wait(1000)
+        wait(1000)
+        toolsgui.Show()
+    End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label4.Text += My.Application.Info.Version.ToString
         Dim startup As New Thread(AddressOf StartupEngine)
@@ -248,8 +255,9 @@ nextend:
     Public IgnoreFileFolder As Boolean = True
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        creatediff.Show()
-        tools.Show()
+        'creatediff.Show()
+        'tools.Show()
+        toolsgui.Show()
     End Sub
 
 

@@ -124,9 +124,9 @@ Partial Class creatediff
         Me.Label1.Font = New System.Drawing.Font("Droid", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(104, 19)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(298, 38)
+        Me.Label1.Size = New System.Drawing.Size(284, 38)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Diif Tool Creation"
+        Me.Label1.Text = "Diif Tool Creator"
         '
         'PictureBox1
         '

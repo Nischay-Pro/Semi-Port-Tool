@@ -54,6 +54,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -128,6 +130,12 @@
     <Compile Include="tools.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="toolsgui.Designer.vb">
+      <DependentUpon>toolsgui.vb</DependentUpon>
+    </Compile>
+    <Compile Include="toolsgui.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="advanced.resx">
@@ -154,8 +162,12 @@
     <EmbeddedResource Include="tools.resx">
       <DependentUpon>tools.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="toolsgui.resx">
+      <DependentUpon>toolsgui.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -191,6 +203,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
