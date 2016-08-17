@@ -1,0 +1,13 @@
+{
+"name" : "No Sound though headphone Fix",
+"description" : "Run to fix Sound Issues",
+"developer": "Nischay Pro",
+"mirrortype": "append",
+"type": "fix",
+"mirror" :[
+"lib\\hw\\audio.primary.msm8916.so",
+"lib\\hw\\audio.primary.default.so",
+"lib64\\hw\\audio.primary.msm8916.so",
+"lib64\\hw\\audio.primary.default.so"
+]
+}

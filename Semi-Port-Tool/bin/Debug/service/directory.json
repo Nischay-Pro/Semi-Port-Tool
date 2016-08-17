@@ -1,0 +1,14 @@
+{
+"description" : "To verify BASE and PORT directory and file schema",
+"scan" : [
+"addon.d",
+"app",
+"bin",
+"etc",
+"lib",
+"tts",
+"usr",
+"xbin",
+"build.prop"
+]
+}
