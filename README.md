@@ -7,6 +7,7 @@
 1. Visual Studio 2015
 2. A Windows 7+ OS
 3. .net 4.5 framework
+4. Droid Serif Font
 
 ## Building
 1. Open the project using Visual Studio Community. Select the Solution File in the Open Project Dialog
@@ -15,11 +16,12 @@
 # Reporting Errors and Suggestions
 ## To Report Errors
 Write a brief overview of the error and try writing the steps to reproduce the error. Do include screenshots as well.
-Use the Github Report Issues / Bugs to post them.
+Use the Github Issues tab and attach label **"Bug"**
 
 ## To Report Suggestions
 ### General Suggestions
 Write a brief overview of the feature you want to be added.
+Use the Github Issues tab and attach label **"Enchancement"**
 
 ### Device Support
 #### Only for Official Maintainers
