@@ -1,0 +1,11 @@
+{
+"name" : "No Sound Fix",
+"description" : "Copy files related to Audio Issue",
+"developer": "Nischay Pro",
+"mirrortype": "append",
+"type": "fix",
+"mirror" :[
+"etc\\mixer_paths.xml"
+]
+
+}

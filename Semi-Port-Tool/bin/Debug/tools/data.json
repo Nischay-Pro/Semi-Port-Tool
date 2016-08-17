@@ -1,0 +1,17 @@
+{
+  "description": "Storing Tool Data",
+  "tools": [
+    {
+      "name": "ext2explore",
+      "goodname": "Ext 2 Explore",
+      "description": "Allows you to view ext2/3/4/ partitions",
+      "author": "Manish Regmi",
+      "runas": "True",
+      "icon": "%name%\\logo.png",
+      "launch": "%name%\\ext2explore.exe",
+      "version": "2.1",
+      "installed": "True",
+      "downloaded": "True"
+    }
+  ]
+}

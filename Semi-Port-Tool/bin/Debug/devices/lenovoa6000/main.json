@@ -1,0 +1,23 @@
+{
+"device" : "lenovoa6000 \\plus",
+"goodname" : "Lenovo A6000\\Plus",
+"developer" : "Nischay Pro",
+"mirror" :[
+"app=%CLEAN%",
+"fonts=%CLEAN%",
+"framework=%CLEAN%",
+"media=%CLEAN%",
+"priv-app=%CLEAN%",
+"etc\\permissions\\platform.xml",
+"etc\\permissions\\handheld_core_hardware.xml",
+"etc\\permissions\\handheld_hardware.xml",
+"etc\\init.d\\00banner"
+],
+"mirrorsc" : [
+
+],
+"advanced" :[
+"audiofix.json",
+"audiofixspeaker.json"
+]
+}
